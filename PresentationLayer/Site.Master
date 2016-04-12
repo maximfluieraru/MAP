@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="PresentationLayer.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server" />
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    MAP
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:Label ID="LabelLoggedEmp" runat="server" Font-Bold="True"></asp:Label><br />
+                <asp:HyperLink ID="HyperLinkDisconnect" runat="server" NavigateUrl="~/LogoutView.aspx">Déconnecter</asp:HyperLink>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenuAdmin" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/RoleAdmin/WelcomeView.aspx" Text="Accueil Admin" Value="Welcome" />
+                        <asp:MenuItem NavigateUrl="~/RoleAdmin/SiteView.aspx" Text="Site" Value="Site" />
+                        <asp:MenuItem NavigateUrl="~/RoleAdmin/EmployeeView.aspx" Text="Employé" Value="Employee" />
+                    </Items>
+                </asp:Menu>
+                <asp:Menu ID="NavigationMenuFeed" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/RoleFeed/WelcomeView.aspx" Text="Accueil Effectif" Value="Welcome" />
+                    </Items>
+                </asp:Menu>
+                <asp:Menu ID="NavigationMenuManager" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/RoleManager/WelcomeView.aspx" Text="Accueil Manager" Value="Welcome" />
+                    </Items>
+                </asp:Menu>
+                <asp:Menu ID="NavigationMenuStock" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/RoleStock/WelcomeView.aspx" Text="Accueil Stock" Value="Welcome" />
+                    </Items>
+                </asp:Menu>
+                <asp:Menu ID="NavigationMenuSupplier" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/RoleSupplier/WelcomeView.aspx" Text="Accueil Fournisseur" Value="Welcome" />
+                        <asp:MenuItem NavigateUrl="~/RoleSupplier/SupplierView.aspx" Text="Fournisseur" Value="Supplier" />
+                        <asp:MenuItem NavigateUrl="~/RoleSupplier/ProductView.aspx" Text="Produit" Value="Product" />
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+    </form>
+</body>
+</html>
